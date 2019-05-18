@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>MAKABREST &nbsp;|&nbsp; Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400|Roboto+Slab:100"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contact.css">
+  </head>
+  <body>
+    <!--- HEADER --->
+    <header>
+      <img class="logo" src="images/logo.png" alt="Makabrest - site's logo">
+      <ul class="menu my-link-style">
+        <li><a href="index.html">PORTFOLIO</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="https://instagram.com" target="_blank"><img src="images/instagram.png" alt="Link to instagram profile"/></a></li>
+      </ul>
+    </header>
+
+    <div class="header-margin">
+    </div>
+    <!--- HEADER --->
+
+
+    <section>
+    <!-- LIGHTBOX -->
+    <div class="lightbox">
+      <div class="lb-title">
+        <h3>ARTWORK TITLE</h3>
+      </div>
+
+      <div class="lb-items-wrapper">
+        <div class="lb-item">
+          <img src="images/portfolio/1.jpg" alt="ESZEWERIA">
+        </div>
+        <div class="lb-item lb-tall">
+          <img src="images/portfolio/2.jpg" alt="GRANAT">
+        </div>
+        <div class="lb-item">
+          <img src="images/portfolio/3.jpg" alt="THE MIRROR">
+        </div>
+        <div class="lb-item lb-tall">
+          <img src="images/portfolio/4.jpg" alt="HOLE">
+        </div>
+        <div class="lb-item">
+          <img src="images/portfolio/5.jpg" alt="GOD SIGHT">
+        </div>
+        <div class="lb-item lb-tall">
+          <img src="images/portfolio/6.jpg" alt="RENESANS">
+        </div>
+
+        <div class="lb-item-nav">
+          <div onclick="lbAPI.nextPrevSlide(-1);"></div>
+          <div onclick="lbAPI.nextPrevSlide(1);"></div>
+        </div>
+      </div>
+
+      <div class="lb-nav">
+        <i class="material-icons md-36" onclick="lbAPI.nextPrevSlide(-1);">navigate_before</i>
+        <i class="material-icons md-36" onclick="lbAPI.nextPrevSlide(1);">navigate_next</i>
+      </div>
+    </div>
+    <!-- LIGHTBOX -->
+    </section>
+
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/hammer.min.js"></script>
+    <script type="text/javascript" src="js/lightbox.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script type="text/javascript">
+      lbAPI.nextPrevSlide(window.opener.slideIndex);
+      lbAPI.removeEscHandler();
+    </script>
+  </body>
+</html>

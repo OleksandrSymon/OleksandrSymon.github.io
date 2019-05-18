@@ -1,0 +1,84 @@
+input[type='email']:-webkit-autofill {
+  -webkit-text-fill-color: rgba(255,255,255,.7);
+  -webkit-box-shadow: 0 0 0 1000px #000 inset;
+}
+
+.form-text-style * {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+  color: rgba(255,255,255,.7);
+}
+
+.logo-contact {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.contact-form {
+  /* border: 1px solid #fff; */
+}
+
+.form-row {
+  width: 55%;
+  max-width: 525px;
+  margin: 0 auto 30px auto;
+
+  position: relative;
+}
+
+.form-row label {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+
+  letter-spacing: .9rem;
+  font-weight: 300;
+  opacity: .7;
+}
+
+.form-row input[type='email']:focus + label,
+.form-row textarea:focus + label {
+  opacity: 0;
+}
+
+.form-row input[type='email'],
+.form-row textarea,
+.form-row button {
+  width: 100%;
+  padding: 9px;
+  padding-left: .9em;
+
+  background-color: #000;
+  border-color: #fff;
+  border: 1px solid rgba(255,255,255,.5);
+  outline: none;
+
+  letter-spacing: .1rem;
+}
+
+.form-row input[type="email"] {
+  border: none;
+}
+
+.form-row textarea {
+  height: 225px;
+  resize: none;
+}
+
+/* .align-right {text-align: center;} */
+
+.form-row button {
+  width: auto;
+  padding: 9px 11px;
+  cursor: pointer;
+
+  transition: .2s ease;
+}
+
+.form-row button span {
+  letter-spacing: .2em;
+  margin-right: -.2em;
+}
+
+.form-row button:hover {background-color: rgba(255,255,255,.7);}
+.form-row button:hover span{ color: rgba(0,0,0,1);}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>MAKABREST &nbsp;|&nbsp; Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400|Roboto+Slab:100"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contact.css">
+  </head>
+  <body>
+    <!--- HEADER --->
+    <header>
+      <img class="logo" src="images/logo.png" alt="Makabrest - site's logo">
+      <ul class="menu my-link-style">
+        <li><a href="index.html">PORTFOLIO</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="https://instagram.com" target="_blank"><img src="images/instagram.png" alt="Link to instagram profile"/></a></li>
+      </ul>
+    </header>
+
+    <div class="header-margin">
+    </div>
+    <!--- HEADER --->
+
+    <div class="hidden-div" style="display: none;">
+
+    </div>
+
+    <section>
+    <!-- LIGHTBOX -->
+    <div class="lightbox">
+      <div class="lb-title">
+        <h3>ARTWORK TITLE</h3>
+      </div>
+
+      <div class="lb-items-wrapper">
+        <div class="lb-item">
+          <img src="images/portfolio/1.jpg" alt="WIRED">
+        </div>
+        <div class="lb-item lb-tall">
+          <img src="images/portfolio/2.jpg" alt="GREEDO">
+        </div>
+        <div class="lb-item">
+          <img src="images/portfolio/3.jpg" alt="NEW SCIENTIST">
+        </div>
+        <div class="lb-item lb-tall">
+          <img src="images/portfolio/4.jpg" alt="MOJO">
+        </div>
+        <div class="lb-item">
+          <img src="images/portfolio/5.jpg" alt="ZELDA">
+        </div>
+        <div class="lb-item lb-tall">
+          <img src="images/portfolio/6.jpg" alt="MEN'S HEALTH">
+        </div>
+
+        <div class="lb-item-nav">
+          <div onclick="lbAPI.nextPrevSlide(-1);"></div>
+          <div onclick="lbAPI.nextPrevSlide(1);"></div>
+        </div>
+      </div>
+
+      <div class="lb-nav">
+        <i class="material-icons md-36" onclick="lbAPI.nextPrevSlide(-1);">navigate_before</i>
+        <i class="material-icons md-36" onclick="lbAPI.nextPrevSlide(1);">navigate_next</i>
+      </div>
+    </div>
+    <!-- LIGHTBOX -->
+
+
+    <div class="loaded">
+
+    </div>
+
+
+    <!--- CONTENT --->
+    <div class="content">
+      <div class="content-column">
+        <div class="content-item" onclick="openSlide(0);">
+          <img class="content-item-img" src="images/portfolio/1.jpg" alt="">
+          <div class="item-overlay"></div>
+          <h3 class="item-overlay-title ">WIRED</h3>
+        </div>
+        <div class="content-item"  onclick="openSlide(3);">
+          <img src="images/portfolio/4.jpg" alt="">
+          <div class="item-overlay"></div>
+          <h3 class="item-overlay-title">MOJO</h3>
+        </div>
+      </div>
+      <div class="content-column">
+        <div class="content-item" onclick="openSlide(1);">
+          <img class="content-item-img" src="images/portfolio/2.jpg" alt="">
+          <div class="item-overlay"></div>
+          <h3 class="item-overlay-title ">GREEDO</h3>
+        </div>
+        <div class="content-item"  onclick="openSlide(4);">
+          <img src="images/portfolio/5.jpg" alt="">
+          <div class="item-overlay"></div>
+          <h3 class="item-overlay-title">ZELDA</h3>
+        </div>
+      </div>
+      <div class="content-column">
+        <div class="content-item" onclick="openSlide(2);">
+          <img class="content-item-img" src="images/portfolio/3.jpg" alt="">
+          <div class="item-overlay"></div>
+          <h3 class="item-overlay-title ">NEW SCIENTIST</h3>
+        </div>
+        <div class="content-item"  onclick="openSlide(5);">
+          <img src="images/portfolio/6.jpg" alt="">
+          <div class="item-overlay"></div>
+          <h3 class="item-overlay-title">MEN'S HEALTH</h3>
+        </div>
+      </div>
+    </div>
+    <!--- CONTENT --->
+    </section>
+
+
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/hammer.min.js"></script>
+    <script type="text/javascript" src="js/lightbox.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/new.js"></script>
+    <!-- <script type="text/javascript" src="js/loadContact.js"></script> -->
+
+    <script type="text/javascript">
+      // Add an event listener
+      document.addEventListener("name-of-event", function(e) {
+        console.log(e.detail); // Prints "Example of an event"
+
+        if (window.location.pathname.split('/').pop() === 'index.html') {
+          lbAPI = lightboxAPI();
+
+          window.lbAPI.addKeyboardNav();
+
+          if(window.innerWidth < 961) {
+            window.lbAPI.setupHammerManager(document.querySelector('.lb-items-wrapper'));
+          }
+
+          console.log("e");
+        }
+      });
+
+      function openSlide(slideIndex) {
+        if (window.innerWidth < 961) {
+          window.open("portfolio.html");
+          window.slideIndex = slideIndex;
+        } else {
+          lbAPI.openSlide(slideIndex);
+        }
+      }
+    </script>
+  </body>
+</html>
