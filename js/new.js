@@ -10,15 +10,12 @@ function pageTransitionAPI() {
       success: function(data) {
           $("section").fadeOut(200, function() {
               const newContent = $(data).filter("section").html();
-
+              var event = new CustomEvent("ajax-success");
 
               $("section").html(newContent);
-              $("section").fadeIn(200);
-
-              // Create the event
-              var event = new CustomEvent("name-of-event", { "detail": "Example of an event" });
-              // Dispatch/Trigger/Fire the event
               document.dispatchEvent(event);
+
+              $("section").fadeIn(200);
             });
         }
     });

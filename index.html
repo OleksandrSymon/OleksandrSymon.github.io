@@ -36,23 +36,20 @@
       </div>
 
       <div class="lb-items-wrapper">
-        <div class="lb-item">
-          <img src="images/portfolio/1.jpg" alt="WIRED">
-        </div>
         <div class="lb-item lb-tall">
-          <img src="images/portfolio/2.jpg" alt="GREEDO">
+          <img src="images/portfolio/all_roads_lead_home_poster.jpg" alt="ALL ROADS LEAD HOME">
         </div>
         <div class="lb-item">
-          <img src="images/portfolio/3.jpg" alt="NEW SCIENTIST">
-        </div>
-        <div class="lb-item lb-tall">
-          <img src="images/portfolio/4.jpg" alt="MOJO">
+          <img src="images/portfolio/new_scientist.jpg" alt="NEW SCIENTIST">
         </div>
         <div class="lb-item">
-          <img src="images/portfolio/5.jpg" alt="ZELDA">
+          <img src="images/portfolio/tati.jpg" alt="TATI">
         </div>
-        <div class="lb-item lb-tall">
-          <img src="images/portfolio/6.jpg" alt="MEN'S HEALTH">
+        <div class="lb-item">
+          <img src="images/portfolio/tree_and_animals.jpg" alt="FOREST BINDINGS">
+        </div>
+        <div class="lb-item">
+          <img src="images/portfolio/calligraphy.jpg" alt="CAMERA OBSCURA">
         </div>
 
         <div class="lb-item-nav">
@@ -78,38 +75,33 @@
     <div class="content">
       <div class="content-column">
         <div class="content-item" onclick="openSlide(0);">
-          <img class="content-item-img" src="images/portfolio/1.jpg" alt="">
+          <img class="content-item-img" src="images/portfolio/all_roads_lead_home_poster.jpg" alt="">
           <div class="item-overlay"></div>
-          <h3 class="item-overlay-title ">WIRED</h3>
-        </div>
-        <div class="content-item"  onclick="openSlide(3);">
-          <img src="images/portfolio/4.jpg" alt="">
-          <div class="item-overlay"></div>
-          <h3 class="item-overlay-title">MOJO</h3>
+          <h3 class="item-overlay-title "></h3>
         </div>
       </div>
       <div class="content-column">
         <div class="content-item" onclick="openSlide(1);">
-          <img class="content-item-img" src="images/portfolio/2.jpg" alt="">
+          <img class="content-item-img" src="images/portfolio/new_scientist.jpg" alt="">
           <div class="item-overlay"></div>
-          <h3 class="item-overlay-title ">GREEDO</h3>
+          <h3 class="item-overlay-title ">NEW SCIENTIST</h3>
         </div>
-        <div class="content-item"  onclick="openSlide(4);">
-          <img src="images/portfolio/5.jpg" alt="">
+        <div class="content-item"  onclick="openSlide(3);">
+          <img src="images/portfolio/tree_and_animals.jpg" alt="">
           <div class="item-overlay"></div>
-          <h3 class="item-overlay-title">ZELDA</h3>
+          <h3 class="item-overlay-title">ANIMALS IN TREE</h3>
         </div>
       </div>
       <div class="content-column">
         <div class="content-item" onclick="openSlide(2);">
-          <img class="content-item-img" src="images/portfolio/3.jpg" alt="">
+          <img class="content-item-img" src="images/portfolio/tati.jpg" alt="">
           <div class="item-overlay"></div>
-          <h3 class="item-overlay-title ">NEW SCIENTIST</h3>
+          <h3 class="item-overlay-title ">TATI</h3>
         </div>
-        <div class="content-item"  onclick="openSlide(5);">
-          <img src="images/portfolio/6.jpg" alt="">
+        <div class="content-item"  onclick="openSlide(4);">
+          <img src="images/portfolio/calligraphy.jpg" alt="">
           <div class="item-overlay"></div>
-          <h3 class="item-overlay-title">MEN'S HEALTH</h3>
+          <h3 class="item-overlay-title">CAMERA OBSCURA</h3>
         </div>
       </div>
     </div>
@@ -120,37 +112,13 @@
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/hammer.min.js"></script>
     <script type="text/javascript" src="js/lightbox.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/new.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <!-- <script type="text/javascript" src="js/loadContact.js"></script> -->
 
     <script type="text/javascript">
-      // Add an event listener
-      document.addEventListener("name-of-event", function(e) {
-        console.log(e.detail); // Prints "Example of an event"
 
-        if (window.location.pathname.split('/').pop() === 'index.html') {
-          lbAPI = lightboxAPI();
-
-          window.lbAPI.addKeyboardNav();
-
-          if(window.innerWidth < 961) {
-            window.lbAPI.setupHammerManager(document.querySelector('.lb-items-wrapper'));
-          }
-
-          console.log("e");
-        }
-      });
-
-      function openSlide(slideIndex) {
-        if (window.innerWidth < 961) {
-          window.open("portfolio.html");
-          window.slideIndex = slideIndex;
-        } else {
-          lbAPI.openSlide(slideIndex);
-        }
-      }
     </script>
   </body>
 </html>
