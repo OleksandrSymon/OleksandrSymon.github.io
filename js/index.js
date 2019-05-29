@@ -34,5 +34,6 @@ function openSlide(slideIndex) {
     window.slideIndex = slideIndex;
   } else {
     lbAPI.openSlide(slideIndex);
+    $("html, body").animate({ scrollTop: 0 });
   }
 }
