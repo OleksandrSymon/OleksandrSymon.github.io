@@ -1,9 +1,8 @@
-var lbAPI, ajaxSuccess = false;
-
+var lbAPI, ajaxSuccess = false, lbFirstOpen = false;
 
 setupLightbox();
 
-document.addEventListener("ajax-success", function(e) {
+document.addEventListener("ajax-success", function(event) {
     ajaxSuccess = true;
 
     if (window.location.pathname.split('/').pop() === 'index.html') {
@@ -11,6 +10,10 @@ document.addEventListener("ajax-success", function(e) {
     }
 });
 
+
+window.addEventListener("resize", function() {
+  resizePlayer();
+});
 
 function setupLightbox() {
   lbAPI = lightboxAPI();
@@ -27,6 +30,12 @@ function openSlide(slideIndex) {
     document.querySelector(".lightbox").style.display = "";
     setupLightbox();
     ajaxSuccess = false;
+    lbFirstOpen = false;
+  }
+
+  if (lbFirstOpen === false) {
+    resizePlayer();
+    lbFirstOpen = true;
   }
 
   if (window.innerWidth < 961) {
@@ -36,4 +45,19 @@ function openSlide(slideIndex) {
     lbAPI.openSlide(slideIndex);
     $("html, body").animate({ scrollTop: 0 });
   }
+}
+
+function resizePlayer() {
+  var playerWidth, playerHeight;
+
+  if (window.innerWidth < 961) {
+    playerWidth = document.querySelector(".lb-items-wrapper").clientWidth;
+  } else {
+    playerWidth = document.querySelector(".lb-items-wrapper").clientWidth * .9;
+  }
+
+  playerHeight = playerWidth * .56;
+
+  document.querySelector("#ytplayer").style.width = playerWidth + "px";
+  document.querySelector("#ytplayer").style.height = playerHeight + "px";
 }

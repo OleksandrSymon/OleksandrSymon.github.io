@@ -59,6 +59,18 @@ function lightboxAPI() {
   }
 
   function openLightbox() {
+    for (item of lbItems) {
+      item.style.display = "block";
+      lbItemsHeights.push( item.clientHeight );
+      item.style.display = "none";
+    }
+
+    maxH = lbItemsHeights.reduce(function(acc, curVal) {
+      return Math.max(acc, curVal);
+    });
+
+    document.querySelector(".lb-items-wrapper").style.height = maxH + "px";
+
     var curItem = lbItems[curIndex],
         curItemImg = curItem.querySelector("img");
 
@@ -84,6 +96,7 @@ function lightboxAPI() {
       lbItemNav.style.height = curItemImg.clientHeight + "px";
       lbItemNav.style.width = curItemImg.clientWidth + "px";
       lbItemNav.style.left = curItemImg.offsetLeft + "px";
+      lbItemNav.style.top = curItemImg.offsetTop + "px";
     } else {
       document.querySelector(".lb-items-wrapper").style.height = curItem.clientHeight + "px";
 

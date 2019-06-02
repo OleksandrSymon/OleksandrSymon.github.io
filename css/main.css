@@ -36,6 +36,9 @@ a:active, a:visited {
 .material-icons.md-36 {font-size: 36px;}
 /* Material Icons */
 
+#ytplayer {
+
+}
 
 /* <HEADER> */
 header {
@@ -115,6 +118,10 @@ header .menu img {
 /* <LIGHTBOX> */
 
 
+#ytplayer {
+  margin-top: 26px;
+}
+
 .loaded {
   display: none;
 }
@@ -161,7 +168,7 @@ header .menu img {
   font-size: 1.4em;
   font-weight: 100;
   letter-spacing: .9em;
-  line-height: 3.5;
+  line-height: 2;
   background-color: rgba(0,0,0,.3);
 }
 /* </CONTENT> */
@@ -208,13 +215,13 @@ header .menu img {
     text-align: left;
     margin-left: 60px;
     margin-bottom: 0;
-    width: 20%;
+    width: 27%;
     position: relative;
   }
 
-  .lb-items-wrapper {width: 70%;}
-  .lb-item img {width: 85%;}
-  .lb-tall img {width: 60%;}
+  .lb-items-wrapper {width: 73%;}
+  .lb-item img {width: 90%;}
+  .lb-tall img {width: 70%;}
   .lb-item {
     text-align: center;
     width: 100%;
@@ -225,7 +232,7 @@ header .menu img {
   .lb-item-nav {
     display: flex;
     position: absolute;
-    bottom: 0;
+    top: 0;
     width: 100%;
     height: 100%;
   }
@@ -250,6 +257,9 @@ header .menu img {
   }
   /* LIGHTBOX */
 
+  #ytplayer {
+    margin-top: 15px;
+  }
 
   .loaded {
     position: absolute;
