@@ -1,4 +1,6 @@
-var lbAPI, ajaxSuccess = false, lbFirstOpen = false;
+var lbAPI,
+    ajaxSuccess = false,
+    lbFirstOpen = false;
 
 setupLightbox();
 
@@ -10,10 +12,6 @@ document.addEventListener("ajax-success", function(event) {
     }
 });
 
-
-window.addEventListener("resize", function() {
-  resizePlayer();
-});
 
 function setupLightbox() {
   lbAPI = lightboxAPI();
@@ -34,7 +32,7 @@ function openSlide(slideIndex) {
   }
 
   if (lbFirstOpen === false) {
-    resizePlayer();
+    document.dispatchEvent(new CustomEvent("resize-ytPlayer"));
     lbFirstOpen = true;
   }
 
@@ -45,19 +43,4 @@ function openSlide(slideIndex) {
     lbAPI.openSlide(slideIndex);
     $("html, body").animate({ scrollTop: 0 });
   }
-}
-
-function resizePlayer() {
-  var playerWidth, playerHeight;
-
-  if (window.innerWidth < 961) {
-    playerWidth = document.querySelector(".lb-items-wrapper").clientWidth;
-  } else {
-    playerWidth = document.querySelector(".lb-items-wrapper").clientWidth * .9;
-  }
-
-  playerHeight = playerWidth * .56;
-
-  document.querySelector("#ytplayer").style.width = playerWidth + "px";
-  document.querySelector("#ytplayer").style.height = playerHeight + "px";
 }

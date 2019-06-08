@@ -36,9 +36,6 @@ a:active, a:visited {
 .material-icons.md-36 {font-size: 36px;}
 /* Material Icons */
 
-#ytplayer {
-
-}
 
 /* <HEADER> */
 header {
@@ -122,9 +119,9 @@ header .menu img {
   margin-top: 26px;
 }
 
-.loaded {
+/* .loaded {
   display: none;
-}
+} */
 
 
 /* <CONTENT> */
@@ -157,19 +154,27 @@ header .menu img {
   opacity: 0;
 }
 
-.item-overlay-title {
+.item-overlay-title-wrapper {
   position: absolute;
   bottom: 0;
   left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  padding: 9px 16px;
+  min-height: 110px;
   text-align: center;
+  background-color: rgba(0,0,0,.3);
+}
+
+.item-overlay-title {
   color: #fff;
   font-family: 'Roboto Slab', serif;
   font-size: 1.4em;
   font-weight: 100;
   letter-spacing: .9em;
-  line-height: 2;
-  background-color: rgba(0,0,0,.3);
+  line-height: 1.8;
 }
 /* </CONTENT> */
 
@@ -261,10 +266,10 @@ header .menu img {
     margin-top: 15px;
   }
 
-  .loaded {
+  /* .loaded {
     position: absolute;
     width: 100%;
-  }
+  } */
 
 
   /* <CONTENT> */
@@ -280,15 +285,19 @@ header .menu img {
   .item-overlay {transition: .3s ease;}
   .content-item:hover .item-overlay {opacity: .4;}
 
-  .item-overlay-title {
-    bottom: auto;
+  .item-overlay-title-wrapper {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.3rem;
     max-width: 80%; /* for line break */
-    line-height: 48px;
+    min-height: 0;
+    padding: 0;
     background-color: rgba(0,0,0,0);
+  }
+
+  .item-overlay-title {
+    font-size: 1.3rem;
+    line-height: 48px;
     opacity: 0;
     transition: .3s ease;
   }

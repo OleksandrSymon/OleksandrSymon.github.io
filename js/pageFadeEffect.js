@@ -10,10 +10,9 @@ function pageTransitionAPI() {
       success: function(data) {
           $("section").fadeOut(200, function() {
               const newContent = $(data).filter("section").html();
-              var event = new CustomEvent("ajax-success");
-
+              
               $("section").html(newContent);
-              document.dispatchEvent(event);
+              document.dispatchEvent(new CustomEvent("ajax-success"));
 
               $("section").fadeIn(200);
             });

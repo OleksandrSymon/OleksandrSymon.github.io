@@ -72,11 +72,13 @@
     <script type="text/javascript" src="js/lightbox.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/ytPlayerAPI.js"></script>
 
     <script type="text/javascript">
       lbAPI.nextPrevSlide(window.opener.slideIndex);
       lbAPI.removeEscHandler();
-      resizePlayer();
+
+      document.dispatchEvent(new CustomEvent("resize-ytPlayer"));
     </script>
   </body>
 </html>

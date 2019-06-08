@@ -53,10 +53,12 @@
           <img src="images/portfolio/calligraphy.jpg" alt="CAMERA OBSCURA">
         </div>
 
+        <!-- Navigation by clicking on image -->
         <div class="lb-item-nav">
           <div onclick="lbAPI.nextPrevSlide(-1);"></div>
           <div onclick="lbAPI.nextPrevSlide(1);"></div>
         </div>
+        <!-- Nav... -->
       </div>
 
       <div class="lb-nav">
@@ -67,44 +69,60 @@
     <!-- LIGHTBOX -->
 
 
-    <div class="loaded">
-
-    </div>
+    <!-- <div class="loaded"></div> -->
 
 
     <!--- CONTENT --->
     <div class="content">
+      <!-- Left column -->
       <div class="content-column">
         <div class="content-item" onclick="openSlide(0);">
           <img class="content-item-img" src="images/portfolio/all_roads_lead_home_poster.jpg" alt="">
           <div class="item-overlay"></div>
-          <h3 class="item-overlay-title "></h3>
+          <div class="item-overlay-title-wrapper">
+            <h3 class="item-overlay-title">ALL ROADS LEAD HOME</h3>
+          </div>
         </div>
       </div>
+      <!-- Left column -->
+
+      <!-- Middle column -->
       <div class="content-column">
         <div class="content-item" onclick="openSlide(1);">
           <img class="content-item-img" src="images/portfolio/new_scientist.jpg" alt="">
           <div class="item-overlay"></div>
-          <h3 class="item-overlay-title ">NEW SCIENTIST</h3>
+          <div class="item-overlay-title-wrapper">
+            <h3 class="item-overlay-title">NEW SCIENTIST</h3>
+          </div>
         </div>
         <div class="content-item"  onclick="openSlide(3);">
           <img src="images/portfolio/tree_and_animals.jpg" alt="">
           <div class="item-overlay"></div>
-          <h3 class="item-overlay-title">ANIMALS IN TREE</h3>
+          <div class="item-overlay-title-wrapper">
+            <h3 class="item-overlay-title">ANIMALS IN TREE</h3>
+          </div>
         </div>
       </div>
+      <!-- Middle column -->
+
+      <!-- Right column -->
       <div class="content-column">
         <div class="content-item" onclick="openSlide(2);">
           <img class="content-item-img" src="images/portfolio/tati.jpg" alt="">
           <div class="item-overlay"></div>
-          <h3 class="item-overlay-title ">TATI</h3>
+          <div class="item-overlay-title-wrapper">
+            <h3 class="item-overlay-title">TATI</h3>
+          </div>
         </div>
         <div class="content-item"  onclick="openSlide(4);">
           <img src="images/portfolio/calligraphy.jpg" alt="">
           <div class="item-overlay"></div>
-          <h3 class="item-overlay-title">CAMERA OBSCURA</h3>
+          <div class="item-overlay-title-wrapper">
+            <h3 class="item-overlay-title">CAMERA OBSCURA</h3>
+          </div>
         </div>
       </div>
+      <!-- Right column -->
     </div>
     <!--- CONTENT --->
     </section>
@@ -115,6 +133,7 @@
     <script type="text/javascript" src="js/lightbox.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/pageFadeEffect.js"></script>
+    <script type="text/javascript" src="js/ytPlayerAPI.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <!-- <script type="text/javascript" src="js/loadContact.js"></script> -->
 

@@ -96,7 +96,7 @@ function lightboxAPI() {
       lbItemNav.style.height = curItemImg.clientHeight + "px";
       lbItemNav.style.width = curItemImg.clientWidth + "px";
       lbItemNav.style.left = curItemImg.offsetLeft + "px";
-      lbItemNav.style.top = curItemImg.offsetTop + "px";
+      lbItemNav.style.top = curHeightsDiff + "px";
     } else {
       document.querySelector(".lb-items-wrapper").style.height = curItem.clientHeight + "px";
 
