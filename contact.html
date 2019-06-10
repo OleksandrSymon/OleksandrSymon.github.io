@@ -31,17 +31,17 @@
       <img src="images/logo_contact.png" alt="Here is another one logo" style="height: 180px;"/>
     </div>
 
-    <form action="" method="get" class="contact-form form-text-style">
+    <form name="contact-form" action="" method="get" class="contact-form form-text-style">
       <div class="form-row">
         <input id="email" name="email" type="email">
-        <label for="email">EMAIL</label>
+        <label id="labelEmail" for="email">EMAIL</label>
       </div>
       <div class="form-row">
         <textarea id="message" name="message"></textarea>
-        <label for="message">MESSAGE</label>
+        <label id="labelMessage" for="message">MESSAGE</label>
       </div>
       <div class="form-row align-right">
-        <button><span>SEND</span></button>
+        <button type="submit"><span>SEND</span></button>
       </div>
     </form>
     </section>
@@ -50,5 +50,6 @@
 
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/contact.js"></script>
   </body>
 </html>
