@@ -12,9 +12,10 @@ textareaMessage.addEventListener("change", function() {
 document.getElementsByTagName("form")[0].addEventListener("submit", function(event) {
   if (areFieldsEmpty()) {
     event.preventDefault();
-    alert("Come together\nright now\nall over me\nFILL ALL FIELDS, PLEASE");
+    alert("Come together\nright now\nall over me\n\nFILL ALL FIELDS, PLEASE");
   }
 });
+
 
 function isStringEmpty(stringToCheck) {
   return (stringToCheck && 0 !== stringToCheck.replace(/\s/g, "").length) ? false : true; // <—— The Yoda condition
