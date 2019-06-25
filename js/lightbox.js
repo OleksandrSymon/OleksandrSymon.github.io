@@ -80,6 +80,10 @@ function lightboxAPI() {
         lbPaddingBtm = Number(window.getComputedStyle(lb)["padding-bottom"].split("px")[0]),
         curHeightsDiff = 0;
 
+    if (prevIndex === 0) {
+      document.dispatchEvent(new CustomEvent("pauseYtplayer"));
+    }
+
     lbItems[prevIndex].style.display = "none";
     lbItems[curIndex].style.display = "block";
 
@@ -113,6 +117,10 @@ function lightboxAPI() {
   function hideLightbox() {
     if (window.innerWidth < 961) slideInDown = false;
     else slideInDown = true;
+
+    if (curIndex === 0) {
+      document.dispatchEvent(new CustomEvent("pauseYtplayer"));
+    }
 
     lb.style.transition = slideInDown ? lbItems[curIndex].clientHeight * 0.0008 + "s ease" : "";
 
