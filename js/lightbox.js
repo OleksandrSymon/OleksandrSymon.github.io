@@ -16,18 +16,7 @@ function lightboxAPI() {
       lbItems = document.querySelectorAll(".lb-item");
 
 
-  for (item of lbItems) {
-    item.style.display = "block";
-    lbItemsHeights.push( item.clientHeight );
-    item.style.display = "none";
-  }
-
-  maxH = lbItemsHeights.reduce(function(acc, curVal) {
-    return Math.max(acc, curVal);
-  });
-
-  document.querySelector(".lb-items-wrapper").style.height = maxH + "px";
-  lb.style.marginTop = -lb.clientHeight + "px";
+  findMaxItemsHeight();
 
   window.addEventListener("resize", function() {
       if (lbOpened)
@@ -35,6 +24,21 @@ function lightboxAPI() {
       else
         lb.style.marginTop = -lb.clientHeight + "px";
   });
+
+  function findMaxItemsHeight() {
+    for (item of lbItems) {
+      item.style.display = "block";
+      lbItemsHeights.push( item.clientHeight );
+      item.style.display = "none";
+    }
+
+    maxH = lbItemsHeights.reduce(function(acc, curVal) {
+      return Math.max(acc, curVal);
+    });
+
+    document.querySelector(".lb-items-wrapper").style.height = maxH + "px";
+    lb.style.marginTop = -lb.clientHeight + "px";
+  }
 
   function updateCurIndex(newIndex) {
     prevIndex = curIndex;
@@ -59,18 +63,6 @@ function lightboxAPI() {
   }
 
   function openLightbox() {
-    for (item of lbItems) {
-      item.style.display = "block";
-      lbItemsHeights.push( item.clientHeight );
-      item.style.display = "none";
-    }
-
-    maxH = lbItemsHeights.reduce(function(acc, curVal) {
-      return Math.max(acc, curVal);
-    });
-
-    document.querySelector(".lb-items-wrapper").style.height = maxH + "px";
-
     var curItem = lbItems[curIndex],
         curItemImg = curItem.querySelector("img");
 
@@ -79,6 +71,9 @@ function lightboxAPI() {
     var lbPaddingTp = Number(window.getComputedStyle(lb)["padding-top"].split("px")[0]),
         lbPaddingBtm = Number(window.getComputedStyle(lb)["padding-bottom"].split("px")[0]),
         curHeightsDiff = 0;
+
+
+    findMaxItemsHeight();
 
     if (prevIndex === 0) {
       document.dispatchEvent(new CustomEvent("pauseYtplayer"));
@@ -109,7 +104,9 @@ function lightboxAPI() {
     }
 
     lb.style.transition = slideInDown ? curItem.clientHeight * 0.0008 + "s ease" : "";
-    lb.style.marginTop = -curHeightsDiff + "px";
+    //setTimeout(function() {
+      lb.style.marginTop = -curHeightsDiff + "px";
+    //}, 1000);
 
     lbOpened = true;
   }
