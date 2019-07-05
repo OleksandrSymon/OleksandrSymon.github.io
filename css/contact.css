@@ -19,7 +19,7 @@ input[type='email']:-webkit-autofill {
 }
 
 .form-row {
-  width: 55%;
+  width: 85%;
   max-width: 525px;
   margin: 0 auto 30px auto;
 
@@ -82,3 +82,10 @@ input[type='email']:-webkit-autofill {
 
 .form-row button:hover {background-color: rgba(255,255,255,.7);}
 .form-row button:hover span{ color: rgba(0,0,0,1);}
+
+
+@media only screen and (min-width: 961px) {
+  .form-row {
+    width: 55%;
+  }
+}

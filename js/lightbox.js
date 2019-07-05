@@ -75,10 +75,6 @@ function lightboxAPI() {
 
     findMaxItemsHeight();
 
-    if (prevIndex === 0) {
-      document.dispatchEvent(new CustomEvent("pauseYtplayer"));
-    }
-
     lbItems[prevIndex].style.display = "none";
     lbItems[curIndex].style.display = "block";
 
@@ -104,26 +100,21 @@ function lightboxAPI() {
     }
 
     lb.style.transition = slideInDown ? curItem.clientHeight * 0.0008 + "s ease" : "";
-    //setTimeout(function() {
-      lb.style.marginTop = -curHeightsDiff + "px";
-    //}, 1000);
+    lb.style.marginTop = -curHeightsDiff + "px";
 
     lbOpened = true;
+    document.dispatchEvent(new CustomEvent("lb-changedstate", {detail: {lbOpened: true, curIndex: curIndex}}));
   }
 
   function hideLightbox() {
     if (window.innerWidth < 961) slideInDown = false;
     else slideInDown = true;
 
-    if (curIndex === 0) {
-      document.dispatchEvent(new CustomEvent("pauseYtplayer"));
-    }
-
     lb.style.transition = slideInDown ? lbItems[curIndex].clientHeight * 0.0008 + "s ease" : "";
-
     lb.style.marginTop = -lb.clientHeight + "px";
 
     lbOpened = false;
+    document.dispatchEvent(new CustomEvent("lb-changedstate", {detail: {lbOpened: false, curIndex: curIndex}}));
   }
 
   function escHandler(event) {

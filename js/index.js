@@ -2,6 +2,9 @@ var lbAPI,
     ajaxSuccess = false,
     lbFirstOpen = false;
 
+var iframe, player; // variables for controling vimeo player
+
+
 setupLightbox();
 
 document.addEventListener("ajax-success", function(event) {
@@ -10,6 +13,18 @@ document.addEventListener("ajax-success", function(event) {
     if (window.location.pathname.split('/').pop() === 'index.html') {
        document.querySelector(".lightbox").style.display = "none";
     }
+});
+
+// vimeo player settings
+iframe = document.getElementById("vimeoPlayer");
+player = new Vimeo.Player(iframe);
+
+document.addEventListener("lb-changedstate", function(event) {
+  if (event.detail.lbOpened === true && event.detail.curIndex != 0)
+    player.pause();
+
+  if (event.detail.lbOpened === false && event.detail.curIndex === 0)
+    player.pause();
 });
 
 

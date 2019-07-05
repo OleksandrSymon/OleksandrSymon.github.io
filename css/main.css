@@ -37,6 +37,24 @@ a:active, a:visited {
 /* Material Icons */
 
 
+/* Initial vimeo player styles */
+#vimeoPlayerContainer {
+  padding:56.25% 0 0 0;
+  position:relative;
+
+  margin: 15px 0 0 0;
+}
+
+#vimeoPlayer {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+/* Initial vimeo player styles */
+
+
 /* <HEADER> */
 header {
   position: relative;
@@ -115,15 +133,6 @@ header .menu img {
 /* <LIGHTBOX> */
 
 
-#ytplayer {
-  margin-top: 26px;
-}
-
-/* .loaded {
-  display: none;
-} */
-
-
 /* <CONTENT> */
 .content {
   display: flex;
@@ -144,16 +153,7 @@ header .menu img {
   display: block;
 }
 
-.item-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  opacity: 0;
-}
-
+.item-overlay,
 .item-overlay-title-wrapper,
 .item-overlay-title {display: none;}
 /* </CONTENT> */
@@ -195,7 +195,7 @@ header .menu img {
     padding: 30px 0 40px 0;
     position: relative;
 
-    max-width: 1980px;
+    max-width: 1980px; /* for scaling|zooming */
     margin: 0 auto;
   }
 
@@ -232,10 +232,6 @@ header .menu img {
     cursor: pointer;
   }
 
-  /* .lb-item-nav div:hover {
-    background: rgba(0,0,0,.2);
-  } */
-
   .lb-nav {
     justify-content: flex-end;
     width: 10%;
@@ -244,15 +240,6 @@ header .menu img {
     position: relative;
   }
   /* LIGHTBOX */
-
-  #ytplayer {
-    margin-top: 15px;
-  }
-
-  /* .loaded {
-    position: absolute;
-    width: 100%;
-  } */
 
 
   /* <CONTENT> */
@@ -265,7 +252,21 @@ header .menu img {
   .content-column {width: 33.3%;}
   .content-item {padding: 1px;}
 
-  .item-overlay {transition: .3s ease;}
+  /* .item-overlay,
+  .item-overlay-title-wrapper,
+  .item-overlay-title {display: block;} */
+
+  .item-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    transition: .3s ease;
+  }
   .content-item:hover .item-overlay {opacity: .4;}
 
   .item-overlay-title-wrapper {
@@ -285,16 +286,27 @@ header .menu img {
 
   .item-overlay-title {
     display: block;
+    opacity: 0;
+    transition: .3s ease;
+  }
+
+  .content-item:hover .item-overlay-title {opacity: 1;}
+
+  .item-overlay-title h3 {
     color: #fff;
     font-family: 'Roboto Slab', serif;
     font-size: 1.3rem;
     font-weight: 100;
     letter-spacing: .9em;
     line-height: 48px;
-    opacity: 0;
-    transition: .3s ease;
   }
 
-  .content-item:hover .item-overlay-title {opacity: 1;}
+  .item-overlay-title img {
+      width: 68%;
+      margin: 0 auto;
+      opacity: .6;
+      transition: .3s ease;}
+
+  .item-overlay-title img:hover {opacity: .86;}
     /* </CONTENT> */
 }

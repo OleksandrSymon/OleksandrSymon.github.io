@@ -35,7 +35,10 @@
       <div class="lb-items-wrapper">
         <div class="lb-item lb-tall">
           <img src="images/portfolio/all_roads_lead_home_poster.jpg" alt="ALL ROADS LEAD HOME">
-          <div id="ytplayer"></div>
+          <div id="vimeoPlayerContainer" style="">
+            <iframe id="vimeoPlayer" src="https://player.vimeo.com/video/344560757?color=ffffff" style=""
+            frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          </div>
         </div>
         <div class="lb-item">
           <img src="images/portfolio/twins.jpg" alt="TWINS">
@@ -66,12 +69,12 @@
     <!-- LIGHTBOX -->
     </section>
 
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/hammer.min.js"></script>
     <script type="text/javascript" src="js/lightbox.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/ytPlayerAPI.js"></script>
 
     <script type="text/javascript">
       lbAPI.nextPrevSlide(window.opener.slideIndex);
