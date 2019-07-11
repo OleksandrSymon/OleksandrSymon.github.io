@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <link rel="shortcut icon" href="favicon.png">
     <title>MAKABREST &nbsp;|&nbsp; Contact</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400|Roboto+Slab:100"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
@@ -33,23 +34,23 @@
 
     <form name="contact-form" action="" method="get" class="contact-form form-text-style">
       <div class="form-row">
-        <input id="email" name="email" type="email">
-        <label id="labelEmail" for="email">EMAIL</label>
+        <input id="email" name="email" type="email" disabled>
+        <label id="labelEmail" for="email">vlad.salvia@gmail.com</label>
       </div>
       <div class="form-row">
-        <textarea id="message" name="message"></textarea>
-        <label id="labelMessage" for="message">MESSAGE</label>
+        <textarea id="message" name="message" disabled></textarea>
+        <label id="labelMessage" for="message">You can contact me by email listed above.</label>
       </div>
-      <div class="form-row align-right">
+      <!-- <div class="form-row align-right">
         <button type="submit"><span>SEND</span></button>
-      </div>
+      </div> -->
     </form>
 
     <script type="text/javascript" src="js/contact.js"></script>
     </section>
     <!-- CONTENT -->
 
-
+    <script src="js/customEventPolyfill.js"></script>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
   </body>

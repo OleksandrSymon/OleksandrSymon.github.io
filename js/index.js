@@ -43,12 +43,6 @@ function openSlide(slideIndex) {
     document.querySelector(".lightbox").style.display = "";
     setupLightbox();
     ajaxSuccess = false;
-    lbFirstOpen = false;
-  }
-
-  if (lbFirstOpen === false) {
-    document.dispatchEvent(new CustomEvent("resize-ytPlayer"));
-    lbFirstOpen = true;
   }
 
   if (window.innerWidth < 961) {

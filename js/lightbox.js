@@ -26,10 +26,10 @@ function lightboxAPI() {
   });
 
   function findMaxItemsHeight() {
-    for (item of lbItems) {
-      item.style.display = "block";
-      lbItemsHeights.push( item.clientHeight );
-      item.style.display = "none";
+    for (var i = 0; i < lbItems.length; i++) {
+      lbItems[i].style.display = "block";
+      lbItemsHeights.push( lbItems[i].clientHeight );
+      lbItems[i].style.display = "none";
     }
 
     maxH = lbItemsHeights.reduce(function(acc, curVal) {

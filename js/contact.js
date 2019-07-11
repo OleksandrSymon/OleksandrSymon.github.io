@@ -9,12 +9,12 @@ textareaMessage.addEventListener("change", function() {
   document.querySelector("#labelMessage").style.opacity = isStringEmpty(this.value) ? "" : 0;
 });
 
-document.getElementsByTagName("form")[0].addEventListener("submit", function(event) {
+/* document.getElementsByTagName("form")[0].addEventListener("submit", function(event) {
   if (areFieldsEmpty()) {
     event.preventDefault();
-    alert("Come together\nright now\nall over me\n\nFILL ALL FIELDS, PLEASE");
+    alert("FILL ALL FIELDS, PLEASE");
   }
-});
+}); */
 
 
 function isStringEmpty(stringToCheck) {
